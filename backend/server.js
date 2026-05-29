@@ -15,8 +15,9 @@ app.use(cors());
 app.use(express.json());
 
 // Health check
-app.get('/health', (req, res) => {
-    res.status(200).json({ status: 'ok' });
+// Root endpoint untuk health check
+app.get('/', (req, res) => {
+    res.status(200).json({ status: 'ok', timestamp: new Date() });
 });
 
 // Endpoint dashboard
